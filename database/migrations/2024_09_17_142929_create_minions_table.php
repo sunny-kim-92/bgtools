@@ -14,14 +14,14 @@ return new class extends Migration
         Schema::create('minions', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            // $table->unsignedBigInteger('class_id')->nullable();
-            $table->integer('attack');
-            $table->integer('health');
+            $table->integer('attack')->nullable();
+            $table->integer('health')->nullable();
             $table->integer('tier')->nullable();
             $table->string('text')->nullable();
             $table->string('image')->nullable();
             $table->string('crop_image')->nullable();
             $table->string('image_gold')->nullable();
+            $table->boolean('is_buddy')->default(false);
             $table->boolean('solos_only')->default(false);
             $table->boolean('duos_only')->default(false);
             $table->timestamps();

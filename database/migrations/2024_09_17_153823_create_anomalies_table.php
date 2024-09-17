@@ -11,16 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('spells', function (Blueprint $table) {
+        Schema::create('anomalies', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->integer('cost')->nullable();
-            $table->string('artist_name')->nullable();
-            $table->integer('tier')->nullable();
             $table->string('text')->nullable();
             $table->string('image')->nullable();
             $table->string('crop_image')->nullable();
-            $table->string('image_gold')->nullable();
             $table->boolean('solos_only')->default(false);
             $table->boolean('duos_only')->default(false);
             $table->timestamps();
@@ -32,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('spells');
+        Schema::dropIfExists('anomalies');
     }
 };

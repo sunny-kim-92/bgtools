@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->integer('armor')->nullable();
+            $table->integer('health')->nullable();
             $table->string('text')->nullable();
             $table->string('image')->nullable();
             $table->string('crop_image')->nullable();
